@@ -1,0 +1,18 @@
+.cardsBlock {
+  width: 80%;
+  height: 400px;
+  border: 1px solid #715e8c;
+  border-radius: 50px;
+  position: relative;
+  background-color: white;
+  margin-bottom: 35px;
+  padding: 20px 30px;
+}
+
+.animalsImg {
+  width: 70%;
+  margin-left: 10%;
+  position: absolute;
+  z-index: -1;
+  bottom: 130px;
+}
