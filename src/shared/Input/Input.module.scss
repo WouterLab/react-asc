@@ -1,0 +1,16 @@
+.input {
+  width: 400px;
+  height: 60px;
+  font-size: 24px;
+  border-radius: 50px;
+  border: 1px solid #715e8c;
+  color: black;
+  padding: 0 35px;
+  font-family: "Montserrat";
+  &:focus {
+    outline: none;
+  }
+  &::placeholder {
+    color: rgba(0, 0, 0, 0.5);
+  }
+}
