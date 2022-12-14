@@ -8,10 +8,15 @@ import Timetable from "./pages/Timetable";
 
 function App() {
   const [isLogged, setIsLogged] = useState(false);
+  const [loginError, setLoginError] = useState(false);
+
   const login = (data) => {
     if (data.login === "polina" && data.password === "polina")
       setIsLogged(true);
-    else setIsLogged(false);
+    else {
+      setLoginError(true);
+      setTimeout(() => setLoginError(false), 3000);
+    }
   };
 
   return (
@@ -24,7 +29,7 @@ function App() {
           <Route path='/help' element={<Help />} />
         </Routes>
       ) : (
-        <Login login={login} />
+        <Login login={login} loginError={loginError} />
       )}
     </>
   );

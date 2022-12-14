@@ -5,7 +5,7 @@ import UserIcon from "../../assets/user-icon.svg";
 import KeyIcon from "../../assets/key-icon.svg";
 import { useState } from "react";
 
-const LoginBlock = ({ login }) => {
+const LoginBlock = ({ login, loginError }) => {
   const [loginData, setLoginData] = useState({
     login: "",
     password: "",
@@ -18,6 +18,7 @@ const LoginBlock = ({ login }) => {
         <div className={styles.inputWrapper}>
           <img src={UserIcon} alt='user' className={styles.inputIcon} />
           <Input
+            loginError={loginError}
             value={loginData.login}
             onChange={(e) =>
               setLoginData({ ...loginData, login: e.target.value })
@@ -29,6 +30,7 @@ const LoginBlock = ({ login }) => {
         <div className={styles.inputWrapper}>
           <img src={KeyIcon} alt='password' className={styles.inputIcon} />
           <Input
+            loginError={loginError}
             value={loginData.password}
             type='password'
             onChange={(e) =>

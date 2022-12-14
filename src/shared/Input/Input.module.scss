@@ -3,10 +3,10 @@
   height: 60px;
   font-size: 24px;
   border-radius: 50px;
-  border: 1px solid #715e8c;
   color: black;
   padding: 0 35px;
   font-family: "Montserrat";
+  transition: all 0.3s;
   &:focus {
     outline: none;
   }
