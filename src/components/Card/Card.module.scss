@@ -2,9 +2,24 @@
   background: #ffffff;
   border: 1px solid #715e8c;
   border-radius: 50px;
-  width: 350px;
-  height: 90%;
+  min-width: 330px;
+  height: 330px;
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
+  cursor: grab;
+}
+
+.title {
+  font-size: 30px;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 40px;
+  line-height: 49px;
+  color: #021373;
+}
+
+.drag {
+  background-color: #eeeeee;
 }

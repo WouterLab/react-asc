@@ -1,12 +1,25 @@
 .cardsBlock {
-  width: 80%;
+  width: 90%;
   height: 400px;
   border: 1px solid #715e8c;
-  border-radius: 50px;
+  border-top: none;
+  border-radius: 0 0 50px 50px;
   position: relative;
   background-color: white;
-  margin-bottom: 55px;
   padding: 20px 30px;
+  animation: show 0.3s ease-in-out;
+  overflow-y: hidden;
+
+  @keyframes show {
+    0% {
+      max-height: 0;
+      padding: 0 30px;
+    }
+    100% {
+      max-height: 400px;
+      padding: 20px 30px;
+    }
+  }
 }
 
 .animalsImg {
@@ -22,8 +35,5 @@
   gap: 20px;
   overflow-x: auto;
   height: 100%;
-}
-
-.over {
-  background-color: #eeeeee;
+  overflow-y: hidden;
 }

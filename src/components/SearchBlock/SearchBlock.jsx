@@ -1,14 +1,16 @@
-import Search from "./Search";
+import { Search } from "./Search";
 import styles from "./SearchBlock.module.scss";
 import SearchIcon from "./search.svg";
 
-const SearchBlock = () => {
+export const SearchBlock = ({ searchText, setSearchText }) => {
   return (
     <div className={styles.searchBlock}>
       <img src={SearchIcon} alt='search' className={styles.searchIcon} />
-      <Search placeholder='Начните вводить слово... ' />
+      <Search
+        value={searchText}
+        onChange={(e) => setSearchText(e.target.value)}
+        placeholder='Начните вводить слово... '
+      />
     </div>
   );
 };
-
-export default SearchBlock;

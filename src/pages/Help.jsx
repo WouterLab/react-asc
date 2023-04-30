@@ -1,5 +1,3 @@
-const Help = () => {
+export const Help = () => {
   return <div>Help</div>;
 };
-
-export default Help;

@@ -1,13 +1,14 @@
 import { useState } from "react";
 import { Route, Routes } from "react-router-dom";
-import Cards from "./pages/Cards";
-import Help from "./pages/Help";
-import Login from "./pages/Login/Login";
-import Main from "./pages/Main/Main";
-import Timetable from "./pages/Timetable";
+import { Cards } from "./pages/Cards";
+import { Help } from "./pages/Help";
+import { Login } from "./pages/Login/Login";
+import { Main } from "./pages/Main/Main";
+import { Timetable } from "./pages/Timetable";
+import { Profile } from "./pages/Profile/Profile";
 
 function App() {
-  const [isLogged, setIsLogged] = useState(false);
+  const [isLogged, setIsLogged] = useState(true);
   const [loginError, setLoginError] = useState(false);
 
   const login = (data) => {
@@ -24,6 +25,7 @@ function App() {
       {isLogged ? (
         <Routes>
           <Route path='/' element={<Main />} />
+          <Route path='/profile' element={<Profile />} />
           <Route path='/timetable' element={<Timetable />} />
           <Route path='/cards' element={<Cards />} />
           <Route path='/help' element={<Help />} />

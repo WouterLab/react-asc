@@ -1,7 +1,5 @@
 import styles from "./Search.module.scss";
 
-const Search = ({ ...props }) => {
-  return <input className={styles.input} {...props} />;
-};
-
-export default Search;
+export const Search = ({ ...props }) => (
+  <input className={styles.input} {...props} />
+);

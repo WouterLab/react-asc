@@ -1,11 +1,11 @@
-import Button from "../../shared/Button/Button";
-import Input from "../../shared/Input/Input";
+import { Input } from "../../shared/Input/Input";
 import styles from "./LoginBlock.module.scss";
 import UserIcon from "../../assets/user-icon.svg";
 import KeyIcon from "../../assets/key-icon.svg";
+import { Button } from "../../shared/Button/Button";
 import { useState } from "react";
 
-const LoginBlock = ({ login, loginError }) => {
+export const LoginBlock = ({ loginError, setCurrentScreen, login }) => {
   const [loginData, setLoginData] = useState({
     login: "",
     password: "",
@@ -40,15 +40,13 @@ const LoginBlock = ({ login, loginError }) => {
             primary
           />
         </div>
-      </div>
-      <div className={styles.buttonWrapper}>
-        <Button onClick={() => login(loginData)} pink>
-          Войти
-        </Button>
-        <Button>Регистрация</Button>
+        <div className={styles.buttonWrapper}>
+          <Button onClick={() => login(loginData)} pink>
+            Войти
+          </Button>
+          <Button onClick={() => setCurrentScreen("reg")}>Регистрация</Button>
+        </div>
       </div>
     </div>
   );
 };
-
-export default LoginBlock;

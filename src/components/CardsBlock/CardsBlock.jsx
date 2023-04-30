@@ -1,25 +1,34 @@
 import styles from "./CardsBlock.module.scss";
 import AnimalsImg from "../../assets/lisazayac.png";
-import Card from "../Card/Card";
-import YesCard from "./cards/yes.png";
+import { Card } from "../Card/Card";
+import { useDrop } from "react-dnd";
+import { useState } from "react";
 
-const CardsBlock = () => {
-  const cards = [
-    {
-      id: 0,
-      image: YesCard,
-      name: "Да",
-    },
-  ];
+export const CardsBlock = ({ cards }) => {
+  const [selectedCards, setSelectedCards] = useState([]);
+  const [{ isOver }, drop] = useDrop(() => ({
+    accept: "div",
+    drop: (item) => selectCard(item),
+    collect: (monitor) => ({
+      isOver: !!monitor.isOver(),
+    }),
+  }));
+
+  const selectCard = ({ id }) => {
+    const itemFind = cards.filter((el) => el.id === id)[0];
+    const newArr = selectedCards;
+    newArr.push(itemFind);
+    setSelectedCards(newArr);
+  };
 
   return (
-    <div className={styles.cardsBlock}>
+    <div className={`${styles.cardsBlock} ${isOver ? styles.over : ""}`}>
       <img src={AnimalsImg} alt='animals' className={styles.animalsImg} />
-      {cards.map((card) => (
-        <Card key={card.id} image={card.image} name={card.name} />
-      ))}
+      <div className={styles.cards} ref={drop}>
+        {selectedCards.map((card) => (
+          <Card key={card.id} image={card.image} title={card.title} />
+        ))}
+      </div>
     </div>
   );
 };
-
-export default CardsBlock;

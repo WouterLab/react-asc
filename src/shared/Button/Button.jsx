@@ -1,6 +1,6 @@
 import styles from "./Button.module.scss";
 
-const Button = ({ pink, children, ...props }) => {
+export const Button = ({ pink, children, ...props }) => {
   const addStyle = {
     background: "#f2ced1",
     border: "1px solid #cf8989",
@@ -12,5 +12,3 @@ const Button = ({ pink, children, ...props }) => {
     </button>
   );
 };
-
-export default Button;

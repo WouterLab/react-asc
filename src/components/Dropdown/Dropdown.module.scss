@@ -1,0 +1,27 @@
+.dropdown {
+  display: flex;
+  gap: 30px;
+  padding: 16px 30px;
+  background: #715e8c;
+  border: 1px solid #715e8c;
+  border-radius: 50px;
+  cursor: pointer;
+}
+
+.wrapper {
+  width: 80%;
+  margin-bottom: 30px;
+}
+
+.title {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 64px;
+  line-height: 70px;
+  color: #ffffff;
+}
+
+.cardList {
+  display: flex;
+  justify-content: center;
+}

@@ -1,5 +1,3 @@
-const Timetable = () => {
+export const Timetable = () => {
   return <div>Timetable</div>;
 };
-
-export default Timetable;

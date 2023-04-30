@@ -1,0 +1,14 @@
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  left: 0;
+  top: 50%;
+  gap: 30px;
+  width: 25%;
+}
+
+.cat {
+  position: absolute;
+  top: -303px;
+}
