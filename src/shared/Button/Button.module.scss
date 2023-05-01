@@ -1,7 +1,7 @@
 .button {
   min-width: 200px;
   height: 80px;
-  border: 1px solid #715e8c;
+  border: 1px solid #cf8989;
   border-radius: 50px;
   font-family: "Neucha";
   font-weight: 400;
@@ -9,9 +9,17 @@
   padding: 0 30px;
   background: #ffffff;
   cursor: pointer;
+  transition: all 0.3s;
+  color: #021373;
 }
 
 .pinkButton {
   background: #f2ced1;
-  border: 1px solid #cf8989;
+}
+
+.wideButton {
+  min-width: 300px;
+  font-size: 56px;
+  border: 5px solid #f2ced1;
+  padding: 0 100px;
 }

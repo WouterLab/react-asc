@@ -6,7 +6,7 @@ export const DropdownCards = ({ cards }) => {
     <div className={styles.cardsBlock}>
       <div className={styles.cards}>
         {cards.map((card) => (
-          <Card key={card.id} image={card.image} name={card.name} />
+          <Card key={card.id} card={card} />
         ))}
       </div>
     </div>

@@ -7,7 +7,7 @@ import { Footer } from "../../components/Footer/Footer";
 import { AllCards } from "../../components/AllCards/AllCards";
 import { Dropdown } from "../../components/Dropdown/Dropdown";
 import YesCard from "../../assets/cards/yes.png";
-import { useEffect, useState } from "react";
+import { createContext, useCallback, useEffect, useRef, useState } from "react";
 
 const cards = [
   {
@@ -91,9 +91,29 @@ const cardsDropdown = [
   },
 ];
 
+export const SelectedCardsContext = createContext();
+
 export const Main = () => {
   const [searchText, setSearchText] = useState("");
   const [cardList, setCardList] = useState(cards);
+  const [selectedCards, setSelectedCards] = useState([]);
+  const [isHelpActive, setIsHelpActive] = useState(false);
+
+  const uniqueIdCounter = useRef(0);
+
+  const selectCard = useCallback(
+    ({ id }) => {
+      const copyCards = cardList.map((obj) => ({ ...obj }));
+      const foundItem = copyCards.filter((el) => el.id === id)[0];
+      const uniqueId = uniqueIdCounter.current++;
+      foundItem.id = `${id}-${uniqueId}`;
+      setSelectedCards((prevSelectedCards) => [
+        ...prevSelectedCards,
+        foundItem,
+      ]);
+    },
+    [cardList, uniqueIdCounter],
+  );
 
   useEffect(() => {
     const filteredCards = cards.filter(
@@ -104,24 +124,30 @@ export const Main = () => {
   }, [searchText]);
 
   return (
-    <div className={styles.wrapper}>
-      <BackgroundLayer />
-      <header className={styles.header}>
-        <div />
-        <LoginButton />
-      </header>
-      <div className={styles.title}>
-        <h1 className={styles.firstText}>Альтернативная система</h1>
-        <h1 className={styles.secondText}>коммуникации</h1>
+    <SelectedCardsContext.Provider value={[selectedCards, setSelectedCards]}>
+      <div className={styles.wrapper}>
+        <BackgroundLayer />
+        <header className={styles.header}>
+          <div />
+          <LoginButton />
+        </header>
+        <div className={styles.title}>
+          <h1 className={styles.firstText}>Альтернативная система</h1>
+          <h1 className={styles.secondText}>коммуникации</h1>
+        </div>
+        <CardsBlock
+          selectCard={selectCard}
+          isHelpActive={isHelpActive}
+          setIsHelpActive={setIsHelpActive}
+        />
+        <SearchBlock searchText={searchText} setSearchText={setSearchText} />
+        <AllCards cards={cardList} isHelpActive={isHelpActive} />
+        <Dropdown title='Простые фразы' cards={cardsDropdown} />
+        <Dropdown title='Существительные' cards={cardsDropdown} />
+        <Dropdown title='Глаголы' cards={cardsDropdown} />
+        <Dropdown title='Прилагательные' cards={cardsDropdown} />
+        <Footer />
       </div>
-      <CardsBlock cards={cardList} />
-      <SearchBlock searchText={searchText} setSearchText={setSearchText} />
-      <AllCards cards={cardList} />
-      <Dropdown title='Простые фразы' cards={cardsDropdown} />
-      <Dropdown title='Существительные' cards={cardsDropdown} />
-      <Dropdown title='Глаголы' cards={cardsDropdown} />
-      <Dropdown title='Прилагательные' cards={cardsDropdown} />
-      <Footer />
-    </div>
+    </SelectedCardsContext.Provider>
   );
 };

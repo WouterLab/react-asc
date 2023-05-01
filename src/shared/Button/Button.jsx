@@ -1,13 +1,13 @@
 import styles from "./Button.module.scss";
 
-export const Button = ({ pink, children, ...props }) => {
-  const addStyle = {
-    background: "#f2ced1",
-    border: "1px solid #cf8989",
-  };
-
+export const Button = ({ pink, wide, children, ...props }) => {
   return (
-    <button {...props} style={pink && addStyle} className={styles.button}>
+    <button
+      {...props}
+      className={`${styles.button} ${pink ? styles.pinkButton : ""} ${
+        wide ? styles.wideButton : ""
+      }`}
+    >
       {children}
     </button>
   );
