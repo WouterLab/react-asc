@@ -10,11 +10,31 @@
 }
 
 .animalsImg {
-  width: 45%;
-  margin-left: 10%;
+  width: 1000px;
+  margin-left: 5%;
   position: absolute;
   z-index: -1;
   bottom: 130px;
+
+  @media (max-width: 1500px) {
+    width: 800px;
+  }
+
+  @media (max-width: 1200px) {
+    width: 600px;
+  }
+
+  @media (max-width: 1000px) {
+    width: 500px;
+    bottom: 200px;
+    margin-left: 0;
+  }
+
+  @media (max-width: 800px) {
+    width: 300px;
+    bottom: 270px;
+    margin-left: 0;
+  }
 }
 
 .cards {

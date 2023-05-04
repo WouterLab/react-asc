@@ -18,7 +18,12 @@ export const CardsBlock = ({ selectCard, setIsHelpActive, isHelpActive }) => {
 
   return (
     <div className={`${styles.cardsBlock} ${isOver ? styles.over : ""}`}>
-      <img src={AnimalsImg} alt='animals' className={styles.animalsImg} />
+      <img
+        src={AnimalsImg}
+        alt='animals'
+        className={styles.animalsImg}
+        id='card-block'
+      />
       <div className={styles.cards} ref={drop}>
         {selectedCards.map((card) => (
           <Card key={card.id} card={card} isDeletable />

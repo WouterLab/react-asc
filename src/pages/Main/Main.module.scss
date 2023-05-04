@@ -35,8 +35,16 @@
 .firstText {
   margin-right: 100px;
   font-size: 86px;
+
+  @media (max-width: 800px) {
+    font-size: 64px;
+  }
 }
 
 .secondText {
   font-size: 86px;
+
+  @media (max-width: 800px) {
+    font-size: 64px;
+  }
 }

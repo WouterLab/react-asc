@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import styles from "./Card.module.scss";
 import { useDrag } from "react-dnd";
 import { SelectedCardsContext } from "../../pages/Main/Main";
@@ -13,6 +13,7 @@ export const Card = ({ card, isDeletable }) => {
   }));
 
   const [selectedCards, setSelectedCards] = useContext(SelectedCardsContext);
+  const [showNotification, setShowNotification] = useState(false);
 
   const deleteCard = (cardId) => {
     if (isDeletable) {
@@ -23,9 +24,22 @@ export const Card = ({ card, isDeletable }) => {
     } else return;
   };
 
+  const scrollToTop = () => {
+    const element = document.getElementById("card-block");
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   const handleClick = (id) => {
     if (isDeletable) deleteCard(id);
-    else setSelectedCards((prevSelectedCards) => [...prevSelectedCards, card]);
+    else {
+      setSelectedCards((prevSelectedCards) => [...prevSelectedCards, card]);
+      setShowNotification(true);
+      setTimeout(() => {
+        setShowNotification(false);
+      }, 5000);
+    }
   };
 
   return (
@@ -38,6 +52,11 @@ export const Card = ({ card, isDeletable }) => {
     >
       <img src={card.image} alt={"card-" + card.title} />
       <p className={styles.title}>{card.title}</p>
+      {showNotification && (
+        <div className={styles.notification} onClick={() => scrollToTop()}>
+          Карточка добавлена!
+        </div>
+      )}
     </button>
   );
 };
