@@ -39,9 +39,22 @@
 
 .cards {
   display: flex;
+  align-items: center;
   gap: 20px;
   overflow-x: auto;
   height: 100%;
+}
+
+.add {
+  font-family: "Neucha";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 64px;
+  line-height: 26px;
+  color: #021373;
+  opacity: 40%;
+  width: 100%;
+  text-align: center;
 }
 
 .over {

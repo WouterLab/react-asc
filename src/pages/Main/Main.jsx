@@ -6,10 +6,41 @@ import { SearchBlock } from "../../components/SearchBlock/SearchBlock";
 import { Footer } from "../../components/Footer/Footer";
 import { AllCards } from "../../components/AllCards/AllCards";
 import { Dropdown } from "../../components/Dropdown/Dropdown";
-import YesCard from "../../assets/cards/yes.png";
 import { createContext, useCallback, useEffect, useRef, useState } from "react";
+import {
+  YesCard,
+  NoCard,
+  BadCard,
+  ByeCard,
+  FoodCard,
+  FootCard,
+  GoodCard,
+  HandCard,
+  HiCard,
+  MeCard,
+  ToothCard,
+  WaterCard,
+  YouCard,
+  AppleCard,
+  BrushCard,
+  DressCard,
+  DrinkCard,
+  EatCard,
+  GiveCard,
+  GoCard,
+  HelpCard,
+  HurtCard,
+  PlayCard,
+  RideCard,
+  SayCard,
+  SleepCard,
+  ThinkCard,
+  WaitCard,
+  WalkCard,
+  WantCard,
+} from "../../hooks";
 
-const cards = [
+const allCards = [
   {
     id: "yes",
     image: YesCard,
@@ -17,44 +48,158 @@ const cards = [
   },
   {
     id: "no",
-    image: YesCard,
+    image: NoCard,
     title: "Нет",
   },
   {
-    id: "dn",
+    id: "can",
     image: YesCard,
-    title: "Не знаю",
+    title: "Можно",
   },
   {
-    id: "who",
-    image: YesCard,
-    title: "Кто",
+    id: "cant",
+    image: NoCard,
+    title: "Нельзя",
   },
   {
-    id: "why",
-    image: YesCard,
-    title: "Зачем",
+    id: "good",
+    image: GoodCard,
+    title: "Хорошо",
   },
   {
-    id: "where",
-    image: YesCard,
-    title: "Откуда",
-  },
-
-  {
-    id: "пес",
-    image: YesCard,
-    title: "Пес",
+    id: "bad",
+    image: BadCard,
+    title: "Плохо",
   },
   {
-    id: "кот",
-    image: YesCard,
-    title: "Кот",
+    id: "bye",
+    image: ByeCard,
+    title: "Пока",
   },
   {
-    id: "Корова",
-    image: YesCard,
-    title: "Корова",
+    id: "hi",
+    image: HiCard,
+    title: "Привет",
+  },
+  {
+    id: "me",
+    image: MeCard,
+    title: "Я",
+  },
+  {
+    id: "you",
+    image: YouCard,
+    title: "Ты",
+  },
+  {
+    id: "apple",
+    image: AppleCard,
+    title: "Яблоко",
+  },
+  {
+    id: "water",
+    image: WaterCard,
+    title: "Вода",
+  },
+  {
+    id: "food",
+    image: FoodCard,
+    title: "Еда",
+  },
+  {
+    id: "foot",
+    image: FootCard,
+    title: "Нога",
+  },
+  {
+    id: "hand",
+    image: HandCard,
+    title: "Рука",
+  },
+  {
+    id: "tooth",
+    image: ToothCard,
+    title: "Зуб",
+  },
+  {
+    id: "wait",
+    image: WaitCard,
+    title: "Ждать",
+  },
+  {
+    id: "eat",
+    image: EatCard,
+    title: "Есть",
+  },
+  {
+    id: "help",
+    image: HelpCard,
+    title: "Помоги",
+  },
+  {
+    id: "ride",
+    image: RideCard,
+    title: "Катать",
+  },
+  {
+    id: "drink",
+    image: DrinkCard,
+    title: "Пить",
+  },
+  {
+    id: "play",
+    image: PlayCard,
+    title: "Играть",
+  },
+  {
+    id: "want",
+    image: WantCard,
+    title: "Хочу",
+  },
+  {
+    id: "brush",
+    image: BrushCard,
+    title: "Чистить зубы",
+  },
+  {
+    id: "hurt",
+    image: HurtCard,
+    title: "Болит",
+  },
+  {
+    id: "dress",
+    image: DressCard,
+    title: "Одеваться",
+  },
+  {
+    id: "think",
+    image: ThinkCard,
+    title: "Думать",
+  },
+  {
+    id: "sleep",
+    image: SleepCard,
+    title: "Спать",
+  },
+  {
+    id: "go",
+    image: GoCard,
+    title: "Идти",
+  },
+  {
+    id: "say",
+    image: SayCard,
+    title: "Скажи",
+  },
+  {
+    id: "walk",
+    image: WalkCard,
+    title: "Гулять",
+  },
+  {
+    id: "give",
+    image: GiveCard,
+    title: "Дай",
   },
 ];
 
@@ -91,11 +236,180 @@ const cardsDropdown = [
   },
 ];
 
+const easyPhrases = [
+  {
+    id: "yes",
+    image: YesCard,
+    title: "Да",
+  },
+  {
+    id: "no",
+    image: NoCard,
+    title: "Нет",
+  },
+  {
+    id: "can",
+    image: YesCard,
+    title: "Можно",
+  },
+  {
+    id: "cant",
+    image: NoCard,
+    title: "Нельзя",
+  },
+  {
+    id: "good",
+    image: GoodCard,
+    title: "Хорошо",
+  },
+  {
+    id: "bad",
+    image: BadCard,
+    title: "Плохо",
+  },
+  {
+    id: "bye",
+    image: ByeCard,
+    title: "Пока",
+  },
+  {
+    id: "hi",
+    image: HiCard,
+    title: "Привет",
+  },
+];
+
+const nouns = [
+  {
+    id: "me",
+    image: MeCard,
+    title: "Я",
+  },
+  {
+    id: "you",
+    image: YouCard,
+    title: "Ты",
+  },
+  {
+    id: "apple",
+    image: AppleCard,
+    title: "Яблоко",
+  },
+  {
+    id: "water",
+    image: WaterCard,
+    title: "Вода",
+  },
+  {
+    id: "food",
+    image: FoodCard,
+    title: "Еда",
+  },
+  {
+    id: "foot",
+    image: FootCard,
+    title: "Нога",
+  },
+  {
+    id: "hand",
+    image: HandCard,
+    title: "Рука",
+  },
+  {
+    id: "tooth",
+    image: ToothCard,
+    title: "Зуб",
+  },
+];
+
+const verbs = [
+  {
+    id: "wait",
+    image: WaitCard,
+    title: "Ждать",
+  },
+  {
+    id: "eat",
+    image: EatCard,
+    title: "Есть",
+  },
+  {
+    id: "help",
+    image: HelpCard,
+    title: "Помоги",
+  },
+  {
+    id: "ride",
+    image: RideCard,
+    title: "Катать",
+  },
+  {
+    id: "drink",
+    image: DrinkCard,
+    title: "Пить",
+  },
+  {
+    id: "play",
+    image: PlayCard,
+    title: "Играть",
+  },
+  {
+    id: "want",
+    image: WantCard,
+    title: "Хочу",
+  },
+  {
+    id: "brush",
+    image: BrushCard,
+    title: "Чистить зубы",
+  },
+  {
+    id: "hurt",
+    image: HurtCard,
+    title: "Болит",
+  },
+  {
+    id: "dress",
+    image: DressCard,
+    title: "Одеваться",
+  },
+  {
+    id: "think",
+    image: ThinkCard,
+    title: "Думать",
+  },
+  {
+    id: "sleep",
+    image: SleepCard,
+    title: "Спать",
+  },
+  {
+    id: "go",
+    image: GoCard,
+    title: "Идти",
+  },
+  {
+    id: "say",
+    image: SayCard,
+    title: "Скажи",
+  },
+  {
+    id: "walk",
+    image: WalkCard,
+    title: "Гулять",
+  },
+  {
+    id: "give",
+    image: GiveCard,
+    title: "Дай",
+  },
+];
+
 export const SelectedCardsContext = createContext();
 
 export const Main = () => {
   const [searchText, setSearchText] = useState("");
-  const [cardList, setCardList] = useState(cards);
+  const [cardList, setCardList] = useState(allCards);
   const [selectedCards, setSelectedCards] = useState([]);
   const [isHelpActive, setIsHelpActive] = useState(false);
 
@@ -116,7 +430,7 @@ export const Main = () => {
   );
 
   useEffect(() => {
-    const filteredCards = cards.filter(
+    const filteredCards = allCards.filter(
       (card) =>
         card.title.toLowerCase().indexOf(searchText.toLowerCase()) !== -1,
     );
@@ -124,7 +438,9 @@ export const Main = () => {
   }, [searchText]);
 
   return (
-    <SelectedCardsContext.Provider value={[selectedCards, setSelectedCards]}>
+    <SelectedCardsContext.Provider
+      value={[selectedCards, setSelectedCards, selectCard]}
+    >
       <div className={styles.wrapper}>
         <BackgroundLayer />
         <header className={styles.header}>
@@ -136,15 +452,14 @@ export const Main = () => {
           <h1 className={styles.secondText}>коммуникации</h1>
         </div>
         <CardsBlock
-          selectCard={selectCard}
           isHelpActive={isHelpActive}
           setIsHelpActive={setIsHelpActive}
         />
         <SearchBlock searchText={searchText} setSearchText={setSearchText} />
         <AllCards cards={cardList} isHelpActive={isHelpActive} />
-        <Dropdown title='Простые фразы' cards={cardsDropdown} />
-        <Dropdown title='Существительные' cards={cardsDropdown} />
-        <Dropdown title='Глаголы' cards={cardsDropdown} />
+        <Dropdown title='Простые фразы' cards={easyPhrases} />
+        <Dropdown title='Существительные' cards={nouns} />
+        <Dropdown title='Глаголы' cards={verbs} />
         <Dropdown title='Прилагательные' cards={cardsDropdown} />
         <Footer />
       </div>

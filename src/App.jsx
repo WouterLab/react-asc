@@ -6,6 +6,7 @@ import { Login } from "./pages/Login/Login";
 import { Main } from "./pages/Main/Main";
 import { Timetable } from "./pages/Timetable";
 import { Profile } from "./pages/Profile/Profile";
+import { NewCard } from "./pages/NewCard/NewCard";
 
 function App() {
   const [isLogged, setIsLogged] = useState(true);
@@ -28,6 +29,7 @@ function App() {
           <Route path='/profile' element={<Profile />} />
           <Route path='/timetable' element={<Timetable />} />
           <Route path='/cards' element={<Cards />} />
+          <Route path='/new-card' element={<NewCard />} />
           <Route path='/help' element={<Help />} />
         </Routes>
       ) : (

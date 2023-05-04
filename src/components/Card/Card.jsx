@@ -12,7 +12,8 @@ export const Card = ({ card, isDeletable }) => {
     }),
   }));
 
-  const [selectedCards, setSelectedCards] = useContext(SelectedCardsContext);
+  const [selectedCards, setSelectedCards, selectCard] =
+    useContext(SelectedCardsContext);
   const [showNotification, setShowNotification] = useState(false);
 
   const deleteCard = (cardId) => {
@@ -34,7 +35,7 @@ export const Card = ({ card, isDeletable }) => {
   const handleClick = (id) => {
     if (isDeletable) deleteCard(id);
     else {
-      setSelectedCards((prevSelectedCards) => [...prevSelectedCards, card]);
+      selectCard(card);
       setShowNotification(true);
       setTimeout(() => {
         setShowNotification(false);
@@ -50,7 +51,11 @@ export const Card = ({ card, isDeletable }) => {
       ref={!isDeletable ? drag : null}
       onClick={() => handleClick(card.id)}
     >
-      <img src={card.image} alt={"card-" + card.title} />
+      <img
+        src={card.image}
+        alt={"card-" + card.title}
+        className={styles.image}
+      />
       <p className={styles.title}>{card.title}</p>
       {showNotification && (
         <div className={styles.notification} onClick={() => scrollToTop()}>

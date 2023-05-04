@@ -1,0 +1,20 @@
+.dropzone {
+  width: 400px;
+  height: 400px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 3px dashed #021373;
+  transition: all 0.3s;
+  cursor: pointer;
+  margin-bottom: 40px;
+  border-radius: 10px;
+
+  &:hover {
+    border: 3px dashed #868788;
+  }
+}
+
+.hiddenInput {
+  display: none;
+}
