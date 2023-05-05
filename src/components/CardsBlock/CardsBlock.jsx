@@ -32,7 +32,8 @@ export const CardsBlock = ({ setIsHelpActive, isHelpActive }) => {
           ))}
         {selectedCards.length === 0 && (
           <div className={styles.add}>
-            Нажимай на карточки снизу, чтобы добавить
+            Нажимай на карточки снизу или перетаскивай их, чтобы составить
+            предложение
           </div>
         )}
       </div>

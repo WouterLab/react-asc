@@ -50,11 +50,16 @@
   font-style: normal;
   font-weight: 400;
   font-size: 64px;
-  line-height: 26px;
+  line-height: 60px;
   color: #021373;
   opacity: 40%;
   width: 100%;
   text-align: center;
+
+  @media (max-width: 900px) {
+    font-size: 48px;
+    line-height: 45px;
+  }
 }
 
 .over {

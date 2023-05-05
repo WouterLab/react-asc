@@ -28,6 +28,18 @@ import ThinkCard from "../assets/cards/think.png";
 import WaitCard from "../assets/cards/wait.png";
 import WalkCard from "../assets/cards/walk.png";
 import WantCard from "../assets/cards/want.png";
+import BlackCard from "../assets/cards/black.png";
+import BlueCard from "../assets/cards/blue.png";
+import BrownCard from "../assets/cards/brown.png";
+import GrayCard from "../assets/cards/gray.png";
+import GreenCard from "../assets/cards/green.png";
+import LightBlueCard from "../assets/cards/lightblue.png";
+import OrangeCard from "../assets/cards/orange.png";
+import PinkCard from "../assets/cards/pink.png";
+import RedCard from "../assets/cards/red.png";
+import VioletCard from "../assets/cards/violet.png";
+import WhiteCard from "../assets/cards/white.png";
+import YellowCard from "../assets/cards/yellow.png";
 
 export {
   YesCard,
@@ -60,4 +72,16 @@ export {
   WaitCard,
   WalkCard,
   WantCard,
+  BlackCard,
+  BlueCard,
+  BrownCard,
+  GrayCard,
+  GreenCard,
+  LightBlueCard,
+  OrangeCard,
+  PinkCard,
+  RedCard,
+  VioletCard,
+  WhiteCard,
+  YellowCard,
 };
