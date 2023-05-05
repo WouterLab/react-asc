@@ -13,6 +13,11 @@
   &:hover {
     border: 3px dashed #868788;
   }
+
+  @media (max-width: 850px) {
+    width: 200px;
+    height: 200px;
+  }
 }
 
 .hiddenInput {

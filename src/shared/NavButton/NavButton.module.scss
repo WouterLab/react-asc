@@ -12,6 +12,11 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  min-width: 250px;
+
+  @media (max-width: 720px) {
+    border-radius: 50px;
+  }
 }
 
 .big {
