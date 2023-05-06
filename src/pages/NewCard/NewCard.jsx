@@ -44,7 +44,9 @@ export const NewCard = () => {
           <div className={styles.buttons}>
             <Button>Отмена</Button>
             <div className={styles.help}>?</div>
-            <Button pink>Готово</Button>
+            <Button pink onClick={() => setSuccessAdd(true)}>
+              Готово
+            </Button>
           </div>
         </>
       )}
