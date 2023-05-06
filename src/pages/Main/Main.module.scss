@@ -50,8 +50,11 @@
   }
 
   @media (max-width: 600px) {
-    font-size: 64px;
     margin: 0;
+  }
+
+  @media (max-width: 400px) {
+    font-size: 48px;
   }
 }
 
@@ -60,5 +63,9 @@
 
   @media (max-width: 800px) {
     font-size: 64px;
+  }
+
+  @media (max-width: 400px) {
+    font-size: 48px;
   }
 }

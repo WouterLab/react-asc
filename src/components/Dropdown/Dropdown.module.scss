@@ -6,6 +6,10 @@
   border: 1px solid #715e8c;
   border-radius: 50px;
   cursor: pointer;
+
+  @media (max-width: 800px) {
+    gap: 10px;
+  }
 }
 
 .wrapper {
@@ -19,6 +23,11 @@
   font-size: 48px;
   line-height: 70px;
   color: #ffffff;
+
+  @media (max-width: 800px) {
+    font-size: 36px;
+    line-height: 45px;
+  }
 }
 
 .cardList {

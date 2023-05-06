@@ -71,6 +71,10 @@
     font-size: 48px;
     line-height: 45px;
   }
+
+  @media (max-width: 400px) {
+    font-size: 36px;
+  }
 }
 
 .over {
