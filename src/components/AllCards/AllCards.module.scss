@@ -8,6 +8,10 @@
   margin-bottom: 35px;
   padding: 25px;
   width: 100%;
+
+  @media (max-width: 600px) {
+    height: 920px;
+  }
 }
 
 .cards {

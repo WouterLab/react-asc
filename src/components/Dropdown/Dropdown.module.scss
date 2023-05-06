@@ -1,5 +1,6 @@
 .dropdown {
   display: flex;
+  align-items: center;
   gap: 30px;
   padding: 0px 30px;
   background: #715e8c;
@@ -9,6 +10,11 @@
 
   @media (max-width: 800px) {
     gap: 10px;
+  }
+
+  @media (max-width: 400px) {
+    padding: 0px 10px;
+    font-size: 36px;
   }
 }
 
@@ -27,6 +33,10 @@
   @media (max-width: 800px) {
     font-size: 36px;
     line-height: 45px;
+  }
+
+  @media (max-width: 400px) {
+    font-size: 28px;
   }
 }
 

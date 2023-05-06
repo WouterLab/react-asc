@@ -18,20 +18,33 @@
   &:active {
     background-color: #715e8c73;
   }
+
+  @media (max-width: 400px) {
+    min-width: 200px;
+    height: 200px;
+  }
 }
 
 .image {
   max-width: 180px;
   max-height: 180px;
+
+  @media (max-width: 400px) {
+    min-width: 140px;
+    height: 140px;
+  }
 }
 
 .title {
-  font-size: 30px;
   font-style: normal;
   font-weight: 700;
   font-size: 40px;
   line-height: 49px;
   color: #021373;
+
+  @media (max-width: 400px) {
+    font-size: 28px;
+  }
 }
 
 .drag {
