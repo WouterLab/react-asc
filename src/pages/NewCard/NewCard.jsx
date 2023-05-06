@@ -10,15 +10,26 @@ export const NewCard = () => {
   const [successAdd, setSuccessAdd] = useState(false);
 
   const uploadLocally = (event) => {
-    const files = event.target.files;
-    if (files && files.length > 0) {
-      setCurrentCard(files[0]);
-    }
+    const file = event.target.files[0];
+    const reader = new FileReader();
+
+    reader.onload = () => {
+      setCurrentCard(reader.result);
+    };
+
+    reader.readAsDataURL(file);
   };
 
   return (
     <PageContainer page='new-card' title='Новая карточка'>
-      <Dropzone onChange={(e) => uploadLocally(e)} />
+      {currentCard ? (
+        <button className={styles.card}>
+          <img src={currentCard} alt='card' className={styles.image} />
+          <p className={styles.title}>{cardTitle}</p>
+        </button>
+      ) : (
+        <Dropzone onChange={(e) => uploadLocally(e)} />
+      )}
       {successAdd ? (
         <div className={styles.successAdd}>Карточка успешно добавлена!</div>
       ) : (

@@ -69,3 +69,41 @@
   line-height: 84px;
   color: #715e8c;
 }
+
+.card {
+  background: #ffffff;
+  border: 1px solid #715e8c;
+  border-radius: 50px;
+  min-width: 350px;
+  height: 350px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  cursor: grab;
+  transition: all 0.3s;
+  margin-bottom: 30px;
+
+  &:hover {
+    background-color: #f9f9f9;
+  }
+
+  &:active {
+    background-color: #715e8c73;
+  }
+}
+
+.image {
+  max-width: 250px;
+  max-height: 250px;
+}
+
+.title {
+  font-size: 30px;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 40px;
+  line-height: 49px;
+  color: #021373;
+  margin-top: 20px;
+}
