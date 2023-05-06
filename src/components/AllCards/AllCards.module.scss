@@ -25,12 +25,17 @@
   font-weight: 400;
   font-size: 48px;
   line-height: 53px;
-  color: #000000;
   width: 330px;
   position: absolute;
   left: -10%;
   top: -30%;
   animation: show 0.5s ease-in-out;
+  border-radius: 50px;
+  color: #000;
+  background: #f2ced1;
+  box-shadow: 24px 26px 28px rgba(0, 0, 0, 0.25);
+  padding: 20px;
+  text-align: center;
 
   @keyframes show {
     0% {
@@ -40,6 +45,12 @@
       opacity: 1;
     }
   }
+
+  @media (max-width: 800px) {
+    font-size: 24px;
+    line-height: 20px;
+    width: 150px;
+  }
 }
 
 .helpAdd {
@@ -48,12 +59,17 @@
   font-weight: 400;
   font-size: 48px;
   line-height: 53px;
-  color: #000000;
   width: 330px;
   position: absolute;
-  right: -20%;
-  bottom: 15%;
+  right: -10%;
+  bottom: -200px;
   animation: show 0.5s ease-in-out;
+  border-radius: 50px;
+  color: #000;
+  background: #f2ced1;
+  box-shadow: 24px 26px 28px rgba(0, 0, 0, 0.25);
+  padding: 20px;
+  text-align: center;
 
   @keyframes show {
     0% {
@@ -62,5 +78,11 @@
     100% {
       opacity: 1;
     }
+  }
+
+  @media (max-width: 800px) {
+    font-size: 24px;
+    line-height: 20px;
+    width: 150px;
   }
 }

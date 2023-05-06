@@ -1,0 +1,23 @@
+.container {
+  display: flex;
+  padding-top: 100px;
+  gap: 100px;
+  animation: show 0.3s ease-in-out;
+
+  @keyframes show {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+
+  @media (max-width: 1000px) {
+    gap: 20px;
+  }
+
+  @media (max-width: 900px) {
+    flex-direction: column;
+  }
+}

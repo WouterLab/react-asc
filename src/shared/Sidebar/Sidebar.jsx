@@ -10,7 +10,7 @@ export const Sidebar = ({ activePage }) => {
   return (
     <div className={styles.sidebar}>
       <img src={Cat} className={styles.cat} alt='cat' />
-      <NavButton active={activePage === "cards"} link='/new-card'>
+      <NavButton active={activePage === "cards"} link='/cards'>
         Карточки
       </NavButton>
       <NavButton active={activePage === "help"} link={"/help"}>

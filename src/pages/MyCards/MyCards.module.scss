@@ -1,0 +1,36 @@
+.container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 20px;
+  border: 1px solid #715e8c;
+  border-radius: 50px;
+  padding: 20px 40px;
+
+  @media (max-width: 800px) {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  @media (max-width: 550px) {
+    grid-template-columns: 1fr;
+    margin-bottom: 50px;
+  }
+}
+
+.card {
+  border: 1px solid #715e8c;
+  border-radius: 50px;
+  width: 250px;
+  height: 250px;
+  padding: 30px;
+
+  @media (max-width: 1400px) {
+    width: 150px;
+    height: 150px;
+  }
+
+  @media (max-width: 550px) {
+    width: 250px;
+    height: 250px;
+  }
+}

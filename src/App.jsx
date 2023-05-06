@@ -1,12 +1,12 @@
 import { useState } from "react";
 import { Route, Routes } from "react-router-dom";
-import { Cards } from "./pages/Cards";
-import { Help } from "./pages/Help";
 import { Login } from "./pages/Login/Login";
 import { Main } from "./pages/Main/Main";
-import { Timetable } from "./pages/Timetable";
 import { Profile } from "./pages/Profile/Profile";
 import { NewCard } from "./pages/NewCard/NewCard";
+import { Cards } from "./pages/Cards/Cards";
+import { Help } from "./pages/Help/Help";
+import { MyCards } from "./pages/MyCards/MyCards";
 
 function App() {
   const [isLogged, setIsLogged] = useState(true);
@@ -27,9 +27,9 @@ function App() {
         <Routes>
           <Route path='/' element={<Main />} />
           <Route path='/profile' element={<Profile />} />
-          <Route path='/timetable' element={<Timetable />} />
           <Route path='/cards' element={<Cards />} />
           <Route path='/new-card' element={<NewCard />} />
+          <Route path='/my-cards' element={<MyCards />} />
           <Route path='/help' element={<Help />} />
         </Routes>
       ) : (

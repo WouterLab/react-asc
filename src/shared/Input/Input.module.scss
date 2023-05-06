@@ -7,9 +7,11 @@
   padding: 0 35px;
   font-family: "Montserrat";
   transition: all 0.3s;
+
   &:focus {
     outline: none;
   }
+
   &::placeholder {
     color: rgba(0, 0, 0, 0.5);
   }

@@ -5,12 +5,18 @@
   height: 100%;
   font-family: "Montserrat";
   width: 100%;
+
   &:focus {
     outline: none;
   }
+
   &::placeholder {
     color: #3a468c;
     font-style: normal;
     font-weight: 400;
+  }
+
+  @media (max-width: 800px) {
+    font-size: 24px;
   }
 }

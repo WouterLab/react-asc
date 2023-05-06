@@ -1,0 +1,32 @@
+.cards {
+  display: flex;
+  padding-top: 100px;
+
+  @media (max-width: 720px) {
+    flex-direction: column;
+  }
+}
+
+.container {
+  padding: 65px 55px;
+  background: #f2ced1;
+  border-radius: 50px;
+}
+
+.title {
+  font-family: "Neucha";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 76px;
+  line-height: 84px;
+  color: #715e8c;
+  margin-bottom: 60px;
+  text-align: center;
+}
+
+.buttons {
+  gap: 34px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
