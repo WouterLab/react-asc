@@ -50,7 +50,7 @@
   overflow-x: auto;
   height: 100%;
 
-  @media (max-width: 800px) {
+  @media (max-width: 600px) {
     flex-direction: column;
     justify-content: center;
   }
