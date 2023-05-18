@@ -7,6 +7,7 @@ import { NewCard } from "./pages/NewCard/NewCard";
 import { Cards } from "./pages/Cards/Cards";
 import { Help } from "./pages/Help/Help";
 import { MyCards } from "./pages/MyCards/MyCards";
+import { NotFound } from "./pages/NotFound/NotFound";
 
 function App() {
   const [isLogged, setIsLogged] = useState(true);
@@ -31,6 +32,7 @@ function App() {
           <Route path='/new-card' element={<NewCard />} />
           <Route path='/my-cards' element={<MyCards />} />
           <Route path='/help' element={<Help />} />
+          <Route path='*' element={<NotFound />} />
         </Routes>
       ) : (
         <Login login={login} loginError={loginError} />
