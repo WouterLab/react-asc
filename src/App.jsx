@@ -10,7 +10,7 @@ import { MyCards } from "./pages/MyCards/MyCards";
 import { NotFound } from "./pages/NotFound/NotFound";
 
 function App() {
-  const [isLogged, setIsLogged] = useState(true);
+  const [isLogged, setIsLogged] = useState(false);
   const [loginError, setLoginError] = useState(false);
 
   const login = (data) => {
