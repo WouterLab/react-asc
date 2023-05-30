@@ -9,6 +9,7 @@ export const RegBlock = ({ setCurrentScreen }) => {
     password: "",
     name: "",
     lastName: "",
+    isParent: false,
   });
 
   return (
@@ -53,6 +54,17 @@ export const RegBlock = ({ setCurrentScreen }) => {
             placeholder='Введите фамилию...'
             primary
           />
+        </div>
+        <div className={styles.inputWrapper}>
+          <input
+            type='checkbox'
+            checked={regData.isParent}
+            onChange={() =>
+              setRegData({ ...regData, isParent: !regData.isParent })
+            }
+            className={styles.checkbox}
+          />
+          <span className={styles.span}>Я родитель</span>
         </div>
         <div className={styles.buttonWrapper}>
           <Button pink onClick={() => setCurrentScreen("login")}>

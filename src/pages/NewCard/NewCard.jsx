@@ -8,6 +8,7 @@ export const NewCard = () => {
   const [currentCard, setCurrentCard] = useState(null);
   const [cardTitle, setCardTitle] = useState("");
   const [successAdd, setSuccessAdd] = useState(false);
+  const [isHelpActive, setIsHelpActive] = useState(false);
 
   const uploadLocally = (event) => {
     const file = event.target.files[0];
@@ -28,12 +29,32 @@ export const NewCard = () => {
           <p className={styles.title}>{cardTitle}</p>
         </button>
       ) : (
-        <Dropzone onChange={(e) => uploadLocally(e)} />
+        <div className={styles.dropzone}>
+          {isHelpActive && (
+            <div className={`${styles.info} ${styles.infoImg}`}>
+              Добавьте
+              <br />
+              изображение для
+              <br />
+              карточки
+            </div>
+          )}
+          <Dropzone onChange={(e) => uploadLocally(e)} />
+          {isHelpActive && (
+            <div className={`${styles.info} ${styles.infoTitle}`}>
+              Введите название
+              <br />
+              для будущей
+              <br />
+              карточки
+            </div>
+          )}
+        </div>
       )}
       {successAdd ? (
         <div className={styles.successAdd}>Карточка успешно добавлена!</div>
       ) : (
-        <>
+        <div className={styles.controls}>
           <input
             type='text'
             placeholder='Введите название карточки...'
@@ -43,12 +64,35 @@ export const NewCard = () => {
           />
           <div className={styles.buttons}>
             <Button>Отмена</Button>
-            <div className={styles.help}>?</div>
+            {isHelpActive && (
+              <div className={`${styles.info} ${styles.infoDone}`}>
+                Нажмите кнопку
+                <br />
+                “Готово” для
+                <br />
+                подтверждения
+              </div>
+            )}
+            <div
+              className={styles.help}
+              onClick={() => setIsHelpActive(!isHelpActive)}
+            >
+              ?
+            </div>
             <Button pink onClick={() => setSuccessAdd(true)}>
               Готово
             </Button>
+            {isHelpActive && (
+              <div className={`${styles.info} ${styles.infoCancel}`}>
+                Или нажмите
+                <br />
+                "Отмена"
+                <br />
+                для сброса
+              </div>
+            )}
           </div>
-        </>
+        </div>
       )}
     </PageContainer>
   );

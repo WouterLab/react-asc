@@ -1,17 +1,78 @@
 .buttons {
   display: flex;
   gap: 60px;
-  margin-bottom: 50px;
+  margin-bottom: 100px;
+
+  @media (max-width: 400px) {
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+  }
 }
 
 .data {
-  width: 70%;
-  height: 500px;
-  border: 1px solid #715e8c;
-  border-radius: 50px;
+  width: 100%;
   padding: 40px;
 
   @media (max-width: 900px) {
     width: 90%;
+    margin-bottom: 50px;
   }
+
+  @media (max-width: 400px) {
+    width: 100%;
+  }
+}
+
+.info {
+  display: flex;
+  justify-content: center;
+  gap: 50px;
+  font-size: 32px;
+
+  @media (max-width: 1200px) {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+.image {
+  border-radius: 50px;
+  border: 1px solid #000;
+  width: 260px;
+  height: 250px;
+}
+
+.input {
+  font-size: 20px;
+  height: 40px;
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #f2ced1 !important;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+
+  @media (max-width: 400px) {
+    flex-direction: column;
+  }
+}
+
+.infoBlock {
+  display: flex;
+  flex-direction: column;
+
+  gap: 20px;
 }

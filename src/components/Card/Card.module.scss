@@ -73,6 +73,7 @@
   bottom: 10px;
   animation: slide 5s ease-in-out;
   cursor: pointer;
+  z-index: 1000;
 
   @keyframes slide {
     0% {

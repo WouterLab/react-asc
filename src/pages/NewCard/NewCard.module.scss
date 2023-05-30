@@ -2,7 +2,7 @@
   border: 1px solid #021373;
   border-radius: 50px;
   padding: 10px 30px;
-  width: 70%;
+  width: 100%;
   outline: none;
   color: rgba(58, 70, 140);
   font-family: "Montserrat";
@@ -107,4 +107,76 @@
   line-height: 49px;
   color: #021373;
   margin-top: 20px;
+}
+
+.dropzone,
+.controls {
+  position: relative;
+}
+
+.info {
+  font-family: "Neucha";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 48px;
+  line-height: 53px;
+  color: #000000;
+  padding: 30px;
+  background: #f2ced1;
+  box-shadow: 24px 26px 28px rgba(0, 0, 0, 0.25);
+  border-radius: 50px;
+  position: absolute;
+  animation: show 0.5s;
+  opacity: 0.8;
+  z-index: 1000;
+
+  @media (max-width: 1400px) {
+    font-size: 36px;
+    line-height: 40px;
+  }
+
+  @media (max-width: 1000px) {
+    font-size: 28px;
+    line-height: 30px;
+    opacity: 0.9;
+  }
+
+  @keyframes show {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 0.8;
+    }
+  }
+
+  &Img {
+    left: -30%;
+    top: -10%;
+  }
+
+  &Title {
+    right: -30%;
+    bottom: 0;
+  }
+
+  &Done {
+    right: 0;
+    bottom: -30%;
+
+    @media (max-width: 850px) {
+      right: -15%;
+      bottom: -5%;
+    }
+  }
+
+  &Cancel {
+    left: -30%;
+    bottom: 0;
+
+    @media (max-width: 850px) {
+      bottom: auto;
+      top: 0;
+    }
+  }
 }

@@ -4,7 +4,6 @@
   gap: 30px;
   width: 600px;
   margin-top: 450px;
-  position: relative;
 
   @media (max-width: 1100px) {
     margin-top: 300px;
@@ -16,24 +15,19 @@
   }
 }
 
+.btnCat {
+  position: relative;
+  width: 100%;
+}
+
 .cat {
   position: absolute;
-  top: -303px;
   z-index: -1;
+  top: -300px;
+  height: 300px;
 
-  @media (max-width: 1100px) {
-    width: 300px;
-    top: -220px;
-  }
-
-  @media (max-width: 720px) {
-    padding: 20px;
-    width: 400px;
-    top: -260px;
-    left: 20%;
-  }
-
-  @media (max-width: 450px) {
-    left: 5%;
+  @media (max-width: 400px) {
+    height: 200px;
+    top: -200px;
   }
 }
