@@ -19,6 +19,11 @@
     background-color: #715e8c73;
   }
 
+  @media (max-height: 500px) {
+    min-width: 200px;
+    height: 200px;
+  }
+
   @media (max-width: 400px) {
     min-width: 200px;
     height: 200px;
@@ -28,6 +33,11 @@
 .image {
   max-width: 180px;
   max-height: 180px;
+
+  @media (max-height: 500px) {
+    min-width: 140px;
+    height: 140px;
+  }
 
   @media (max-width: 400px) {
     min-width: 140px;

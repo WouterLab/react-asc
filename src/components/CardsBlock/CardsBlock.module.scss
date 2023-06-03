@@ -8,6 +8,10 @@
   margin-bottom: 20px;
   padding: 20px 30px;
 
+  @media (max-height: 500px) {
+    height: 290px;
+  }
+
   @media (max-width: 800px) {
     height: 100%;
   }

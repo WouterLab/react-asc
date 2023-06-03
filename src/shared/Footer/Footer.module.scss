@@ -1,6 +1,6 @@
 .footer {
   height: 100px;
-  width: 100%;
+  width: 100vw;
   background: #715e8c;
   margin-top: 80px;
   text-align: center;
@@ -11,7 +11,11 @@
   gap: 10px;
 
   a {
-    color: #d5d5d5;
+    color: #000;
     text-decoration: none;
   }
+}
+
+.wrapper {
+  position: relative;
 }

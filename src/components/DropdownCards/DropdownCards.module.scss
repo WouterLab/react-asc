@@ -21,6 +21,10 @@
     }
   }
 
+  @media (max-height: 500px) {
+    height: 280px;
+  }
+
   @media (max-width: 400px) {
     width: 80%;
     height: 280px;

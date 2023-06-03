@@ -2,7 +2,6 @@ import { CardsBlock } from "../../components/CardsBlock/CardsBlock";
 import styles from "./Main.module.scss";
 import { LoginButton } from "../../components/LoginButton/LoginButton";
 import { SearchBlock } from "../../components/SearchBlock/SearchBlock";
-import { Footer } from "../../components/Footer/Footer";
 import { AllCards } from "../../components/AllCards/AllCards";
 import { Dropdown } from "../../components/Dropdown/Dropdown";
 import { createContext, useCallback, useEffect, useRef, useState } from "react";
@@ -12,6 +11,7 @@ import { nouns } from "../../data/nouns";
 import { verbs } from "../../data/verbs";
 import { adjectives } from "../../data/adjectives";
 import { BackgroundLayerPink } from "../../shared/BackgroundLayerPink/BackgroundLayerPink";
+import { Footer } from "../../shared/Footer/Footer";
 export const SelectedCardsContext = createContext();
 
 export const Main = () => {
@@ -68,7 +68,7 @@ export const Main = () => {
         <Dropdown title='Существительные' cards={nouns} />
         <Dropdown title='Глаголы' cards={verbs} />
         <Dropdown title='Прилагательные' cards={adjectives} />
-        <Footer />
+        <Footer noBack />
       </div>
     </SelectedCardsContext.Provider>
   );
