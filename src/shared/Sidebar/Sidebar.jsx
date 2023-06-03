@@ -7,7 +7,14 @@ export const Sidebar = ({ activePage }) => {
     <div className={styles.sidebar}>
       <div className={styles.btnCat}>
         <img src={Cat} className={styles.cat} alt='cat' />
-        <NavButton active={activePage === "cards"} link='/cards'>
+        <NavButton
+          active={
+            activePage === "cards" ||
+            activePage === "my-cards" ||
+            activePage === "new-card"
+          }
+          link='/cards'
+        >
           Карточки
         </NavButton>
       </div>
