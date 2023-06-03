@@ -9,7 +9,11 @@ export const Dropdown = ({ title, cards }) => {
   return (
     <div className={styles.wrapper}>
       <div className={styles.dropdown} onClick={() => setIsOpened(!isOpened)}>
-        <img src={ArrowSvg} alt='arrow' />
+        <img
+          src={ArrowSvg}
+          alt='arrow'
+          className={isOpened ? styles.reverse : styles.arrow}
+        />
         <p className={styles.title}>{title}</p>
       </div>
       {isOpened && (

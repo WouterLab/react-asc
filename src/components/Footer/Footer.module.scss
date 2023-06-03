@@ -3,4 +3,15 @@
   width: 100%;
   background: #715e8c;
   margin-top: 80px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  gap: 10px;
+
+  a {
+    color: #d5d5d5;
+    text-decoration: none;
+  }
 }

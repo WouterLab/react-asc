@@ -4,7 +4,7 @@
   border-radius: 0 50px 50px 0;
   font-family: "Neucha";
   font-weight: 400;
-  font-size: 40px;
+  font-size: 64px;
   padding: 25px;
   color: #021373;
   background: #f2ced1;
@@ -21,6 +21,12 @@
 }
 
 .big {
-  padding: 50px;
+  padding: 70px;
+  font-weight: 400;
+  font-size: 84px;
   box-shadow: 16px 26px 17px rgba(0, 0, 0, 0.25);
+
+  @media (max-width: 720px) {
+    font-size: 68px;
+  }
 }

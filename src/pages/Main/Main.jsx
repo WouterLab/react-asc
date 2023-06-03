@@ -1,4 +1,3 @@
-import { BackgroundLayer } from "../../shared/BackgroundLayer/BackgroundLayer";
 import { CardsBlock } from "../../components/CardsBlock/CardsBlock";
 import styles from "./Main.module.scss";
 import { LoginButton } from "../../components/LoginButton/LoginButton";
@@ -12,6 +11,7 @@ import { easyPhrases } from "../../data/easyPhrases";
 import { nouns } from "../../data/nouns";
 import { verbs } from "../../data/verbs";
 import { adjectives } from "../../data/adjectives";
+import { BackgroundLayerPink } from "../../shared/BackgroundLayerPink/BackgroundLayerPink";
 export const SelectedCardsContext = createContext();
 
 export const Main = () => {
@@ -49,7 +49,7 @@ export const Main = () => {
       value={[selectedCards, setSelectedCards, selectCard]}
     >
       <div className={styles.wrapper}>
-        <BackgroundLayer />
+        <BackgroundLayerPink />
         <header className={styles.header}>
           <div />
           <LoginButton />

@@ -18,7 +18,7 @@ export const Login = ({ login, loginError }) => {
           setCurrentScreen={setCurrentScreen}
         />
       ) : (
-        <RegBlock setCurrentScreen={setCurrentScreen} />
+        <RegBlock setCurrentScreen={setCurrentScreen} login={login} />
       )}
       <img src={PigPng} className={styles.pigImage} alt='pig' />
     </div>

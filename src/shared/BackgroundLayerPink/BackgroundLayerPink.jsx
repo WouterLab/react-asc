@@ -1,8 +1,8 @@
-import styles from "./BackgroundLayer.module.scss";
-import Background from "../../assets/bg-vector.svg";
-import BackgroundDots from "../../assets/dots-lg.svg";
+import styles from "./BackgroundLayerPink.module.scss";
+import Background from "../../assets/bg-vector-pink.svg";
+import BackgroundDots from "../../assets/dots-md.svg";
 
-export const BackgroundLayer = () => {
+export const BackgroundLayerPink = () => {
   return (
     <>
       <img src={Background} className={styles.backgroundLayer} alt='bg-layer' />

@@ -14,8 +14,7 @@ function App() {
   const [loginError, setLoginError] = useState(false);
 
   const login = (data) => {
-    if (data.login === "polina" && data.password === "polina")
-      setIsLogged(true);
+    if (data.login !== "" && data.password !== "") setIsLogged(true);
     else {
       setLoginError(true);
       setTimeout(() => setLoginError(false), 3000);

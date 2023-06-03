@@ -12,7 +12,7 @@ export const LoginBlock = ({ loginError, setCurrentScreen, login }) => {
   });
 
   return (
-    <div>
+    <div className={styles.wrapper}>
       <h1 className={styles.loginHeader}>Выполните вход:</h1>
       <div>
         <div className={styles.inputWrapper}>

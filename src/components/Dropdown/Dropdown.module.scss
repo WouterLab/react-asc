@@ -18,6 +18,17 @@
   }
 }
 
+.reverse {
+  transform: rotate(-180deg);
+  transition: all 0.3s;
+}
+
+.arrow {
+  transform: rotate(0);
+  z-index: 100;
+  transition: all 0.3s;
+}
+
 .wrapper {
   width: 80%;
   margin-bottom: 30px;

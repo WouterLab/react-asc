@@ -3,7 +3,7 @@ import styles from "./RegBlock.module.scss";
 import { Input } from "../../shared/Input/Input";
 import { Button } from "../../shared/Button/Button";
 
-export const RegBlock = ({ setCurrentScreen }) => {
+export const RegBlock = ({ setCurrentScreen, login }) => {
   const [regData, setRegData] = useState({
     login: "",
     password: "",
@@ -11,17 +11,33 @@ export const RegBlock = ({ setCurrentScreen }) => {
     lastName: "",
     isParent: false,
   });
+  const [loginError, setLoginError] = useState(false);
+
+  const checkRegData = () => {
+    if (
+      regData.login !== "" &&
+      regData.password !== "" &&
+      regData.name !== "" &&
+      regData.lastName !== ""
+    )
+      login(true);
+    else {
+      setLoginError(true);
+      setTimeout(() => setLoginError(false), 3000);
+    }
+  };
 
   return (
-    <div>
+    <div className={styles.wrapper}>
       <h1 className={styles.loginHeader}>Регистрация:</h1>
-      <div>
+      <div className={styles.inputs}>
         <div className={styles.inputWrapper}>
           <Input
             value={regData.login}
             onChange={(e) => setRegData({ ...regData, login: e.target.value })}
             placeholder='Введите логин...'
             primary
+            loginError={loginError}
           />
         </div>
         <div className={styles.inputWrapper}>
@@ -33,6 +49,7 @@ export const RegBlock = ({ setCurrentScreen }) => {
             }
             placeholder='Введите пароль...'
             primary
+            loginError={loginError}
           />
         </div>
         <div className={styles.inputWrapper}>
@@ -42,6 +59,7 @@ export const RegBlock = ({ setCurrentScreen }) => {
             onChange={(e) => setRegData({ ...regData, name: e.target.value })}
             placeholder='Введите имя...'
             primary
+            loginError={loginError}
           />
         </div>
         <div className={styles.inputWrapper}>
@@ -53,6 +71,7 @@ export const RegBlock = ({ setCurrentScreen }) => {
             }
             placeholder='Введите фамилию...'
             primary
+            loginError={loginError}
           />
         </div>
         <div className={styles.inputWrapper}>
@@ -67,7 +86,7 @@ export const RegBlock = ({ setCurrentScreen }) => {
           <span className={styles.span}>Я родитель</span>
         </div>
         <div className={styles.buttonWrapper}>
-          <Button pink onClick={() => setCurrentScreen("login")}>
+          <Button pink onClick={() => checkRegData()}>
             Зарегистрироваться
           </Button>
         </div>

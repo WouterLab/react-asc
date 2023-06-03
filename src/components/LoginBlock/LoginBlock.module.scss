@@ -3,6 +3,11 @@
   font-size: 48px;
   text-align: center;
   margin-bottom: 30px;
+  margin-top: 30px;
+}
+
+.wrapper {
+  padding: 20px;
 }
 
 .inputWrapper {
@@ -18,4 +23,10 @@
 .buttonWrapper {
   display: flex;
   justify-content: space-between;
+  width: 100%;
+  gap: 30px;
+
+  @media (max-width: 600px) {
+    flex-direction: column;
+  }
 }
