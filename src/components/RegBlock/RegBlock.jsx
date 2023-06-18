@@ -2,6 +2,7 @@ import { useState } from "react";
 import styles from "./RegBlock.module.scss";
 import { Input } from "../../shared/Input/Input";
 import { Button } from "../../shared/Button/Button";
+import { useNavigate } from "react-router-dom";
 
 export const RegBlock = ({ setCurrentScreen, login }) => {
   const [regData, setRegData] = useState({
@@ -12,6 +13,7 @@ export const RegBlock = ({ setCurrentScreen, login }) => {
     isParent: false,
   });
   const [loginError, setLoginError] = useState(false);
+  const navigate = useNavigate();
 
   const checkRegData = () => {
     if (
@@ -19,9 +21,10 @@ export const RegBlock = ({ setCurrentScreen, login }) => {
       regData.password !== "" &&
       regData.name !== "" &&
       regData.lastName !== ""
-    )
+    ) {
       login(true);
-    else {
+      navigate("/");
+    } else {
       setLoginError(true);
       setTimeout(() => setLoginError(false), 3000);
     }

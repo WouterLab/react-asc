@@ -4,12 +4,14 @@ import UserIcon from "../../assets/user-icon.svg";
 import KeyIcon from "../../assets/key-icon.svg";
 import { Button } from "../../shared/Button/Button";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 export const LoginBlock = ({ loginError, setCurrentScreen, login }) => {
   const [loginData, setLoginData] = useState({
     login: "",
     password: "",
   });
+  const navigate = useNavigate();
 
   return (
     <div className={styles.wrapper}>
@@ -41,7 +43,13 @@ export const LoginBlock = ({ loginError, setCurrentScreen, login }) => {
           />
         </div>
         <div className={styles.buttonWrapper}>
-          <Button onClick={() => login(loginData)} pink>
+          <Button
+            onClick={() => {
+              login(loginData);
+              navigate("/");
+            }}
+            pink
+          >
             Войти
           </Button>
           <Button onClick={() => setCurrentScreen("reg")}>Регистрация</Button>

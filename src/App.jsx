@@ -23,19 +23,19 @@ function App() {
 
   return (
     <>
-      {isLogged ? (
-        <Routes>
-          <Route path='/' element={<Main />} />
-          <Route path='/profile' element={<Profile />} />
-          <Route path='/cards' element={<Cards />} />
-          <Route path='/new-card' element={<NewCard />} />
-          <Route path='/my-cards' element={<MyCards />} />
-          <Route path='/help' element={<Help />} />
-          <Route path='*' element={<NotFound />} />
-        </Routes>
-      ) : (
-        <Login login={login} loginError={loginError} />
-      )}
+      <Routes>
+        <Route path='/' element={<Main isLogged={isLogged} />} />
+        <Route path='/profile' element={<Profile />} />
+        <Route path='/cards' element={<Cards />} />
+        <Route path='/new-card' element={<NewCard />} />
+        <Route path='/my-cards' element={<MyCards />} />
+        <Route path='/help' element={<Help />} />
+        <Route path='*' element={<NotFound />} />
+        <Route
+          path='/login'
+          element={<Login login={login} loginError={loginError} />}
+        />
+      </Routes>
     </>
   );
 }

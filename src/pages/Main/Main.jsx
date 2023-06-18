@@ -14,7 +14,7 @@ import { BackgroundLayerPink } from "../../shared/BackgroundLayerPink/Background
 import { Footer } from "../../shared/Footer/Footer";
 export const SelectedCardsContext = createContext();
 
-export const Main = () => {
+export const Main = ({ isLogged }) => {
   const [searchText, setSearchText] = useState("");
   const [cardList, setCardList] = useState(allCards);
   const [selectedCards, setSelectedCards] = useState([]);
@@ -52,7 +52,7 @@ export const Main = () => {
         <BackgroundLayerPink />
         <header className={styles.header}>
           <div />
-          <LoginButton />
+          <LoginButton isLogged={isLogged} />
         </header>
         <div className={styles.title}>
           <h1 className={styles.firstText}>Альтернативная система</h1>
