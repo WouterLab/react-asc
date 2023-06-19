@@ -24,7 +24,7 @@ export const Main = ({ isLogged }) => {
 
   const selectCard = useCallback(
     ({ id }) => {
-      const copyCards = cardList.map((obj) => ({ ...obj }));
+      const copyCards = allCards.map((obj) => ({ ...obj }));
       const foundItem = copyCards.filter((el) => el.id === id)[0];
       const uniqueId = uniqueIdCounter.current++;
       foundItem.id = `${id}-${uniqueId}`;
@@ -33,7 +33,7 @@ export const Main = ({ isLogged }) => {
         foundItem,
       ]);
     },
-    [cardList, uniqueIdCounter],
+    [uniqueIdCounter],
   );
 
   useEffect(() => {
